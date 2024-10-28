@@ -14,6 +14,8 @@ import LookinServerBase
 #endif
 
 public class LKS_SwiftTraceManager: NSObject {
+    
+    @MainActor
     @objc public static func swiftMarkIVars(ofObject hostObject: AnyObject) {
         var mirror: Mirror? = Mirror(reflecting: hostObject)
         var currClass: AnyClass? = type(of: hostObject)
